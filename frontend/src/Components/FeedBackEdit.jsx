@@ -8,7 +8,7 @@ const FeedBackEdit = () => {
 
   useEffect(() => {
     const fetchFeedback = async () => {
-      const res = await fetch(`http://localhost:500/api/feedbacks/${id}`);
+      const res = await fetch(`https://feedbackmern-backend.onrender.com/api/feedbacks/${id}`);
       const data = await res.json();
       setFormData(data);
     };
@@ -19,7 +19,7 @@ const FeedBackEdit = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch(`http://localhost:500/api/feedbacks/${id}`, {
+    await fetch(`https://feedbackmern-backend.onrender.com/api/feedbacks/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
