@@ -11,7 +11,7 @@ const FeedBackForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:500/api/feedbacks", {
+      const res = await fetch("https://feedbackmern-backend.onrender.com/api/feedbacks", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
