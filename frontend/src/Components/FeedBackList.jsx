@@ -5,7 +5,7 @@ const FeedBackList = () => {
   const [feedbacks, setFeedbacks] = useState([]);
 
   const fetchFeedbacks = async () => {
-    const res = await fetch("http://localhost:500/api/feedbacks");
+    const res = await fetch("https://feedbackmern-backend.onrender.com/api/feedbacks");
     const data = await res.json();
     setFeedbacks(data);
   };
@@ -15,7 +15,7 @@ const FeedBackList = () => {
   }, []);
 
   const handleDelete = async (id) => {
-    await fetch(`http://localhost:500/api/feedbacks/${id}`, { method: "DELETE" });
+    await fetch(`https://feedbackmern-backend.onrender.com/api/feedbacks/${id}`, { method: "DELETE" });
     fetchFeedbacks();
   };
 
